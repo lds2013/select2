@@ -153,7 +153,8 @@ define([
 
     var css = {
       left: offset.left,
-      top: container.bottom
+      top: container.bottom,
+      zIndex: [...document.all].reduce((r, e) => Math.max(r, +window.getComputedStyle(e).zIndex || 0), 0)
     };
 
     // Determine what the parent element is to use for calculating the offset
